@@ -1,0 +1,129 @@
+@import '~@/components/select/_imports/import';
+
+.select {
+  position: relative;
+  cursor: pointer;
+}
+
+.select__header {
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  padding-right: 15px;
+  padding-left: 15px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: -2px 2px 4px rgba(128, 152, 213, 0.074983);
+}
+
+.select__btn-toggle {
+  margin-left: auto;
+}
+
+.select__title {
+  margin-right: 15px;
+  color: #554b60;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1.12px;
+  text-transform: uppercase;
+}
+
+.select__choice {
+  margin-right: 15px;
+  color: #9da5b1;
+  font-size: 13px;
+  line-height: 14px;
+}
+
+.select__body {
+  position: absolute;
+  z-index: 100;
+  display: none;
+  min-width: 100%;
+  margin-top: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: -3px 8px 22px #dfe2ef;
+
+  &--show {
+    display: block;
+  }
+}
+
+.select__search-panel {
+  padding: 20px;
+}
+
+.select__search-group {
+  position: relative;
+
+  &--input {
+    .select__search-input {
+      color: #26212b;
+    }
+
+    .select__search-icon {
+      left: 0;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.select__search-icon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.select__search-input {
+  width: 100%;
+  height: 40px;
+  padding: 15px;
+  color: transparent;
+  font-size: 13px;
+  line-height: 21px;
+  border: 1px solid #e4e6ee;
+  border-radius: 2px;
+  animation-delay: 200ms;
+}
+
+.select__list-container {
+  padding: 20px;
+  border-top: 1px solid rgba(233, 235, 240, 0.5);
+  border-bottom: 1px solid rgba(233, 235, 240, 0.5);
+}
+
+.select__list {
+  max-height: 216px;
+  overflow: scroll;
+}
+
+.select__item {
+  display: flex;
+  align-items: center;
+  color: #26212b;
+  font-size: 13px;
+  line-height: 21px;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.select__footer {
+  padding: 20px;
+}
+
+// mixes
+
+.select__btn {
+  &:first-of-type {
+    margin-right: 10px;
+  }
+}

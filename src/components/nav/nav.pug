@@ -1,0 +1,6 @@
+mixin nav(links, mixes)
+  include ~@/components/nav/_imports/import
+
+  nav.nav(class=(mixes) && `${mixes}__nav`)
+    each link, idx in links
+      a.nav__link(class=(idx === 0) && 'nav__link--active' href='#')= link

@@ -1,0 +1,35 @@
+@import '~@/components/input/_imports/import';
+
+.input__label {
+  color: #a3a7b1;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1.12px;
+  text-transform: uppercase;
+}
+
+.input__self {
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  padding: 10px 15px;
+  color: #26212b;
+  font-size: 13px;
+  line-height: 1;
+  background: #fff;
+  border: 1px solid #e4e6ee;
+  border-radius: 2px;
+
+  &::placeholder {
+    color: rgba(38, 33, 43, 0.3);
+  }
+
+  &:hover {
+    background-color: darken(#fff, 2%);
+  }
+
+  &--disabled {
+    background-color: #f7f7fa;
+  }
+}

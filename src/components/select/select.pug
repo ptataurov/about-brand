@@ -1,0 +1,32 @@
+mixin select(isControl, type, title, items, mixes)
+  include ~@/components/select/_imports/import
+
+  .select(class=(mixes) && `${mixes}__select` data-type=`${type}`)
+    .select__header
+      p.select__title= title
+      p.select__choice= items[0]
+      img.select__btn-toggle(src=require('../../components/select/img/triangle.svg') alt='Иконка выпадающего списка')
+      
+
+    .select__body.fade-out
+      if (isControl)
+        .select__search-panel
+          fieldset.select__search-group
+            input.select__search-input(type='text')
+            img.select__search-icon(src=require('../../components/select/img/loupe.svg') alt='Иконка поиска')
+
+      .select__list-container
+        ul.select__list
+          each item, idx in items
+            if (idx !== 0)
+              li.select__item.select__item--select
+                +checkbox
+                | #{item}
+
+      if (isControl)
+        .select__footer
+          +btn('Сбросить все', 'select', 'btn--gray')
+
+          +btn('Применить', 'select')
+          
+

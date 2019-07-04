@@ -1,0 +1,7 @@
+mixin btn-toggle(label, isActive, mixes)
+  include ./_imports/import
+
+  .btn-toggle(class=(mixes) && `${mixes}__btn-toggle` class=(isActive) && 'btn-toggle--active')
+    button.btn-toggle__self(type='button')
+
+    p.btn-toggle__label= label

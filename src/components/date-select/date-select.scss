@@ -1,0 +1,11 @@
+@import '~@/assets/scss/mixins';
+@import './_imports/import';
+
+@import '~daterangepicker/daterangepicker.css';
+
+.date-select {
+}
+
+.date-select__input {
+  cursor: pointer;
+}

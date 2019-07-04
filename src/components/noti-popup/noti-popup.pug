@@ -1,0 +1,22 @@
+mixin noti-popup
+  include ~@/components/noti-popup/_imports/import
+
+  .noti-popup.fade-out
+    .noti-popup__header
+      .noti-popup__title-group
+        .noti-popup__icon
+          include ~@/components/top-bar/img/icons/3.svg
+          .noti-popup__icon-dot
+        p.noti-popup__title 2 уведомления
+      button.noti-popup__btn-reset(type='button') Сбросить все
+    ul.noti-popup__list
+      each item in [1, 2]
+        li.noti-popup__item
+          .noti-popup__item-header
+            p.noti-popup__item-title Новый отзыв
+            p.noti-popup__item-time-ago 20 минут назад
+          .noti-popup__item-body
+            span.noti-popup__item-body-icon
+              img(src=require('../../components/nav/img/icons/message.svg') alt='Иконка сообщения')
+            p.noti-popup__item-content Нужна была ещё внутренняя отделка, а муж работает круглосуточно - так что дизайн-проектом занималась я.
+          a.noti-popup__item-link(href='#') Открыть отзыв

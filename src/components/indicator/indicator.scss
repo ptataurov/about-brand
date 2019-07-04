@@ -1,0 +1,125 @@
+@import '~@/components/indicator/_imports/import';
+
+.indicator {
+  display: flex;
+  flex-basis: 33.333333%;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  padding: 30px 0;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: -2px 2px 4px rgba(128, 152, 213, 0.074983);
+
+  &--reviews {
+    .indicator__icon {
+      background-color: rgba(90, 213, 161, 0.2);
+    }
+  }
+
+  &--bad-reviews {
+    .indicator__icon {
+      background-color: rgba(229, 54, 84, 0.2);
+    }
+  }
+
+  &--average-mark {
+    .indicator__icon {
+      background-color: rgba(249, 209, 0, 0.1);
+    }
+  }
+
+  &--negative {
+    .indicator__dynamics {
+      svg {
+        transform: rotate(180deg);
+        path {
+          fill: #e53654;
+        }
+      }
+    }
+    .indicator__dynamics-value {
+      color: #e53654;
+    }
+  }
+
+  &--gradient-blue,
+  &--gradient-red,
+  &--gradient-green {
+    .indicator__value,
+    .indicator__label {
+      color: #fff;
+    }
+    .indicator__dynamics,
+    .indicator__icon {
+      background-color: #fff;
+    }
+  }
+  &--gradient-blue {
+    background: linear-gradient(275.01deg, #2e5bff 0%, #bc2eff 100%);
+
+    .indicator__icon {
+      svg {
+        path {
+          fill: transparent;
+        }
+      }
+    }
+  }
+
+  &--gradient-red {
+    background: linear-gradient(275.01deg, #e53636 0%, #e53654 100%);
+  }
+
+  &--gradient-green {
+    background: linear-gradient(95.01deg, #29b1cc 0%, #5ad4a1 100%);
+  }
+}
+
+.indicator__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.indicator__label {
+  margin-bottom: 9px;
+  color: #a3a7b1;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1.12px;
+  text-transform: uppercase;
+}
+
+.indicator__value {
+  margin-bottom: 15px;
+  color: #000;
+  font-weight: 700;
+  font-size: 48px;
+  font-family: 'Montserrat';
+  line-height: 1;
+}
+
+.indicator__dynamics {
+  display: flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+
+.indicator__dynamics-value {
+  margin-left: 7px;
+  color: #5ad5a1;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: 'Montserrat';
+  line-height: 20px;
+  text-transform: uppercase;
+}

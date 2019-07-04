@@ -1,0 +1,24 @@
+mixin indicator(type, value, isNegative, gradient)
+  include ~@/components/indicator/_imports/import
+
+  .indicator(class=(gradient) && `indicator--gradient-${gradient}` class=(isNegative) && 'indicator--negative' class=(type) === 'Отзывы' ? 'indicator--reviews' : (type) === 'Негатив' ? 'indicator--bad-reviews' : 'indicator--average-mark')
+    span.indicator__icon
+
+      if (gradient) 
+        case type
+          when 'Отзывы': img.indicator__icon-img(src=require('../../components/indicator/img/icons/1-gradient.svg') alt='Иконка')
+          when 'Негатив': img.indicator__icon-img(src=require('../../components/indicator/img/icons/2.svg') alt='Иконка')
+          when 'Оценка': img.indicator__icon-img(src=require('../../components/indicator/img/icons/3-gradient.svg') alt='Иконка')
+
+      else
+        case type
+          when 'Отзывы': img.indicator__icon-img(src=require('../../components/indicator/img/icons/1.svg') alt='Иконка')
+          when 'Негатив': img.indicator__icon-img(src=require('../../components/indicator/img/icons/2.svg') alt='Иконка')
+          when 'Оценка': img.indicator__icon-img(src=require('../../components/indicator/img/icons/3.svg') alt='Иконка')
+    
+    p.indicator__label= (type) === 'Отзывы' ? 'Всего отзывов' : (type) === 'Негатив' ? 'Процент негатива' : 'Средняя оценка'
+
+    p.indicator__value= value
+
+    .indicator__dynamics
+      p.indicator__dynamics-value= `${isNegative ? '-' : '+'}0.05%`

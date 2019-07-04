@@ -1,0 +1,3 @@
+mixin btn(textContent, mixes, type)
+  include ~@/components/btn/_imports/import
+  button.btn(class=(type) && `${type}` class=(mixes) && `${mixes}__btn` type='button')= textContent

@@ -1,0 +1,62 @@
+@import '~@/components/btn/_imports/import';
+
+.btn {
+  padding: 10px 40px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  background-color: #2e5bff;
+  border: 1.5px solid transparent;
+  border-radius: 2px;
+
+  &:hover {
+    color: #2e5bff;
+    background-color: transparent;
+    border-color: #2e5bff;
+  }
+}
+
+.btn--red {
+  background-color: #e53654;
+
+  &:hover {
+    color: #e53654;
+    border-color: #e53654;
+  }
+}
+
+.btn--gray {
+  color: rgba(38, 33, 43, 0.8);
+  background-color: transparent;
+  border: 1.5px solid #edeef3;
+
+  &:hover {
+    color: rgba(38, 33, 43, 0.5);
+    border-color: #edeef3;
+  }
+}
+
+.btn--outline-blue {
+  color: #2e5bff;
+  background-color: transparent;
+  border-color: #2e5bff;
+
+  &:hover {
+    color: #fff;
+    background-color: #2e5bff;
+    border: 1.5px solid transparent;
+  }
+}
+
+.btn--outline-green {
+  color: #5ad4a1;
+  background-color: transparent;
+  border-color: #5ad4a1;
+
+  &:hover {
+    color: #fff;
+    background-color: #5ad4a1;
+    border: 1.5px solid transparent;
+  }
+}

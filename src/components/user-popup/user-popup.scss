@@ -1,0 +1,90 @@
+@import '~@/components/user-popup/_imports/import';
+
+.user-popup {
+  position: absolute;
+  top: 94px;
+  right: 20px;
+  z-index: 100;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  padding: 70px 0 35px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: -2px 2px 4px rgba(128, 152, 213, 0.074983);
+
+  &--show {
+    display: flex;
+  }
+}
+
+.user-popup__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 140px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(85, 75, 96, 0.1);
+
+  img {
+    width: 100%;
+  }
+}
+
+.user-popup__name {
+  margin-bottom: 10px;
+  color: #26212b;
+  font-weight: 400;
+  font-size: 22px;
+  font-family: Montserrat, 'sans-serif';
+}
+
+.user-popup__company-name {
+  margin-bottom: 25px;
+  color: #a3a7b1;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 1.12px;
+  text-transform: uppercase;
+}
+
+.user-popup__btn-add-user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 100px;
+  color: #a3a7b1;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+
+  &:hover {
+    transform: scale(1.15);
+  }
+}
+
+// mixes
+
+.user-popup__btn {
+  &:nth-of-type(1) {
+    margin-bottom: 30px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  &:last-child {
+    padding-right: 48px;
+    padding-left: 48px;
+  }
+}
+
+.user-popup__btn-add {
+  margin-right: 10px;
+  &:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,7 @@
+mixin input(label, placeholder, type, mixes)
+  include ~@/components/input/_imports/import
+
+  .input
+    label.input__label
+      | #{label}
+      input.input__self(class=(mixes) && `${mixes}__input` type=(type) : `${type}` ? 'text' placeholder=(placeholder) && `${placeholder}`)

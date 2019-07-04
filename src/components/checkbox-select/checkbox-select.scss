@@ -1,0 +1,19 @@
+@import '~@/components/checkbox-select/_imports/import';
+
+.checkbox-select {
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  padding-right: 15px;
+  padding-left: 15px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: -2px 2px 4px rgba(128, 152, 213, 0.074983);
+  cursor: pointer;
+}
+
+.checkbox-select__label {
+  color: #26212b;
+  font-size: 13px;
+  line-height: 21px;
+}

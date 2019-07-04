@@ -1,0 +1,46 @@
+@import '~@/assets/scss/mixins';
+@import './_imports/import';
+
+.btn-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &--active {
+    .btn-toggle__self {
+      justify-content: flex-end;
+      background-color: #40cb91;
+    }
+
+    .btn-toggle__label {
+      color: #26212b;
+    }
+  }
+}
+
+.btn-toggle__self {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 36px;
+  height: 20px;
+  margin-right: 10px;
+  padding: 2px;
+  background-color: #cfd6de;
+  border-radius: 10px;
+
+  &:after {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    content: '';
+  }
+}
+
+.btn-toggle__label {
+  color: #9da5b1;
+  font-size: 13px;
+  line-height: 21px;
+}

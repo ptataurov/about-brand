@@ -1,0 +1,18 @@
+mixin modal
+  include ~@/components/modal/_imports/import
+
+  .modal
+    header.modal__header
+      h6.modal__title Заголовок
+      button.modal__btn-close
+
+    .modal__body
+      .modal__input-group
+        +input('Почта', 'myemail@gmail.com', 'email')
+
+      .modal__input-group
+        +input('Пароль', 'Пароль', 'password')
+
+    footer.modal__footer
+      +btn('Войти')
+    

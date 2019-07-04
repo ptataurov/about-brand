@@ -1,0 +1,37 @@
+$sm: 575.98px;
+$md: 767.98px;
+$lg: 991.98px;
+$xl: 1199.98px;
+
+@mixin mq-less-sm {
+  @media (max-width: $sm) {
+    @content;
+  }
+}
+
+@mixin mq-less-md {
+  @media (max-width: $md) {
+    @content;
+  }
+}
+
+@mixin mq-less-lg {
+  @media (max-width: $lg) {
+    @content;
+  }
+}
+
+@mixin mq-less-xl {
+  @media (max-width: $xl) {
+    @content;
+  }
+}
+
+@mixin img-resp {
+  width: 100%;
+  height: auto;
+}
+
+@mixin container {
+  padding: 0 40px;
+}

@@ -1,0 +1,22 @@
+@import '~@/assets/scss/common';
+@import './_imports/import';
+
+#reputation-pg {
+  .filter {
+    margin-bottom: 30px;
+  }
+}
+
+// Mixes
+
+.reputation-pg__indicators-section {
+  margin-bottom: 30px;
+}
+
+.reputation-pg__area-chart {
+  margin-bottom: 30px;
+}
+
+.reputation-pg__table {
+  margin-bottom: 30px;
+}

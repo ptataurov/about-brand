@@ -1,0 +1,17 @@
+mixin user-popup
+  include ~@/components/user-popup/_imports/import
+
+  .user-popup.fade-out
+    .user-popup__logo
+      img(src=require('../../components/top-bar/img/am-pm-logo.svg') alt='Логотип компании')
+    p.user-popup__name!= 'Фёдор <br> Полкунов'
+    p.user-popup__company-name AM.PM
+    +btn('Редактировать профиль', 'user-popup')
+
+    button.user-popup__btn-add-user(type='button')
+      +btn-add('user-popup')
+      | Добавить пользователя
+      
+
+    +btn('Выйти', 'user-popup', 'btn--red')
+      

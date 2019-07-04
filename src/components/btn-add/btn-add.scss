@@ -1,0 +1,32 @@
+@import '~@/components/btn-add/_imports/import';
+
+.btn-add {
+  position: relative;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background-color: #e6f9f1;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.15);
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 2px;
+    background-color: #5ad4a1;
+    transform: translate(-50%, -50%);
+    content: '';
+  }
+
+  &:before {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}

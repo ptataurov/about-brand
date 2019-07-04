@@ -1,0 +1,7 @@
+mixin indicators-section(items, mixes)
+  include ~@/components/indicators-section/_imports/import
+
+  section.indicators-section(class=(mixes) && `${mixes}__indicators-section`)
+
+    each item in items
+      +indicator(item.type, item.value, item.isNegative, item.gradient)

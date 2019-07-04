@@ -1,0 +1,254 @@
+mixin reviews(mixes)
+  include ~@/components/reviews/_imports/import
+
+  .reviews(class=(mixes) && `${mixes}__reviews`)
+    table.reviews__table
+      thead.reviews__table-head
+        tr
+          th 
+            .reviews__table-date-title
+              | Дата
+              include ~@/components/reviews/img/icons/arrow.svg
+          th
+            .reviews__table-user-title
+              | Пользователь
+              include ~@/components/reviews/img/icons/arrow.svg
+          th Продукт
+          th Рейтинг
+          th WWW
+          th Статус
+          th Поиск
+          th
+            a.reviews__table-export-link(href='#')
+              include ~@/components/reviews/img/icons/export.svg
+              | Экспорт
+
+      tbody.reviews__table-body
+        -
+          var items = [
+            {
+              date: '11.06.2019',
+              userImg: null,
+              userName: 'Геннадий',
+              productImg: require('../../components/reviews/img/product-img.png'),
+              productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+              rating: 3,
+              domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+              status: false,
+              searchLogo: require('../../components/reviews/img/logos/yandex.svg')
+            },
+            {
+              date: '11.06.2019',
+              userImg: require('../../components/reviews/img/user-img.png'),
+              userName: 'Юлия',
+              productImg: require('../../components/reviews/img/product-img.png'),
+              productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+              rating: 4,
+              domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+              status: true,
+              searchLogo: null
+            },
+            {
+              date: '11.06.2019',
+              userImg: null,
+              userName: 'Геннадий',
+              productImg: require('../../components/reviews/img/product-img.png'),
+              productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+              rating: 3,
+              domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+              status: false,
+              searchLogo: require('../../components/reviews/img/logos/yandex.svg')
+            },
+            {
+              date: '11.06.2019',
+              userImg: require('../../components/reviews/img/user-img.png'),
+              userName: 'Юлия',
+              productImg: require('../../components/reviews/img/product-img.png'),
+              productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+              rating: 4,
+              domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+              status: true,
+              searchLogo: null
+            },
+            {
+              date: '11.06.2019',
+              userImg: null,
+              userName: 'Геннадий',
+              productImg: require('../../components/reviews/img/product-img.png'),
+              productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+              rating: 3,
+              domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+              status: false,
+              searchLogo: require('../../components/reviews/img/logos/yandex.svg')
+            },
+            {
+              date: '11.06.2019',
+              userImg: require('../../components/reviews/img/user-img.png'),
+              userName: 'Юлия',
+              productImg: require('../../components/reviews/img/product-img.png'),
+              productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+              rating: 4,
+              domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+              status: true,
+              searchLogo: null
+            },
+            {
+              date: '11.06.2019',
+              userImg: null,
+              userName: 'Геннадий',
+              productImg: require('../../components/reviews/img/product-img.png'),
+              productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+              rating: 3,
+              domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+              status: false,
+              searchLogo: require('../../components/reviews/img/logos/yandex.svg')
+            },
+            {
+              date: '11.06.2019',
+              userImg: require('../../components/reviews/img/user-img.png'),
+              userName: 'Юлия',
+              productImg: require('../../components/reviews/img/product-img.png'),
+              productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+              rating: 4,
+              domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+              status: true,
+              searchLogo: null
+            },
+            {
+              date: '11.06.2019',
+              userImg: null,
+              userName: 'Геннадий',
+              productImg: require('../../components/reviews/img/product-img.png'),
+              productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+              rating: 3,
+              domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+              status: false,
+              searchLogo: require('../../components/reviews/img/logos/yandex.svg')
+            },
+            {
+              date: '11.06.2019',
+              userImg: require('../../components/reviews/img/user-img.png'),
+              userName: 'Юлия',
+              productImg: require('../../components/reviews/img/product-img.png'),
+              productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+              rating: 4,
+              domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+              status: true,
+              searchLogo: null
+            },
+            {
+              date: '11.06.2019',
+              userImg: null,
+              userName: 'Геннадий',
+              productImg: require('../../components/reviews/img/product-img.png'),
+              productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+              rating: 3,
+              domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+              status: false,
+              searchLogo: require('../../components/reviews/img/logos/yandex.svg')
+            },
+            {
+              date: '11.06.2019',
+              userImg: require('../../components/reviews/img/user-img.png'),
+              userName: 'Юлия',
+              productImg: require('../../components/reviews/img/product-img.png'),
+              productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+              rating: 4,
+              domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+              status: true,
+              searchLogo: null
+            },
+            {
+              date: '11.06.2019',
+              userImg: null,
+              userName: 'Геннадий',
+              productImg: require('../../components/reviews/img/product-img.png'),
+              productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+              rating: 3,
+              domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+              status: false,
+              searchLogo: require('../../components/reviews/img/logos/yandex.svg')
+            },
+            {
+              date: '11.06.2019',
+              userImg: require('../../components/reviews/img/user-img.png'),
+              userName: 'Юлия',
+              productImg: require('../../components/reviews/img/product-img.png'),
+              productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+              rating: 4,
+              domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+              status: true,
+              searchLogo: null
+            },
+            {
+              date: '11.06.2019',
+              userImg: null,
+              userName: 'Геннадий',
+              productImg: require('../../components/reviews/img/product-img.png'),
+              productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+              rating: 3,
+              domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+              status: false,
+              searchLogo: require('../../components/reviews/img/logos/yandex.svg')
+            },
+            {
+              date: '11.06.2019',
+              userImg: require('../../components/reviews/img/user-img.png'),
+              userName: 'Юлия',
+              productImg: require('../../components/reviews/img/product-img.png'),
+              productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+              rating: 4,
+              domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+              status: true,
+              searchLogo: null
+            }
+          ]
+        each item in items
+          tr
+            td.reviews__table-date= item.date
+            td
+              .reviews__table-user-name-group
+                if (item.userImg)
+                  span.reviews__table-user-img(style=`background-image: url(${item.userImg})`)
+                else
+                  span.reviews__table-user-img= `${item.userName[0]}`
+                p.reviews__table-user-name= item.userName
+            td
+              .reviews__table-product-name-group 
+                span.reviews__table-product-logo
+                  span.reviews__table-product-img(style=`background-image: url(${item.productImg})`)
+                p.reviews__table-product-name= item.productName
+            td
+              .reviews__table-rating
+                each star, idx in [1, 2, 3, 4, 5]
+                  if(idx < item.rating)
+                    include ~@/components/reviews/img/icons/star.svg
+                  else 
+                    include ~@/components/reviews/img/icons/star-disabled.svg
+
+            td
+              img.reviews__table-domain-logo(src=`${item.domainLogo}` alt='Логотип домена')
+            td
+              +btn-toggle((item.status) ? 'Обработан' : 'Не обработан', item.status)
+
+            td 
+              if (item.searchLogo) 
+                img.reviews__table-domain-logo(src=`${item.searchLogo}` alt='Логотип поискового движка')
+              else
+                | Нет
+            td 
+              button.reviews__table-toggle-btn(type='button') Открыть отзыв
+          tr.reviews__table-review-body
+            td(colspan='8')
+              .reviews__table-review-content-group
+                p.reviews__table-review-subtitle Достоинства:
+                p.reviews__table-review-content Все прописала в комментарии
+              .reviews__table-review-content-group
+                p.reviews__table-review-subtitle Недостатки:
+                p.reviews__table-review-content Не нашла
+              .reviews__table-review-content-group
+                p.reviews__table-review-subtitle В целом:
+                p.reviews__table-review-content Недавно наконец-то достроили дом в Долгопрудном, хотели уже наконец перебираться с Патриков туда, но нужна была ещё внутренняя отделка, а муж работает круглосуточно - так что дизайн-проектом занималась я. Для меня очень важно было не только поддержать общий стиль во всех комнатах - в том числе и в ванной - но и сделать так, чтобы каждая деталь была качественной, максимально комфортной в использовании. Поэтому к смесителям - которые, по моему мнению, должны работать как часы, а не только сверкать хромом и заставлять по полчаса ждать, когда же вода соизволит стать нужной мне температуры. Декоратор предложила несколько в этой ценовой категории, но этот понравился больше всех. Муж, конечно, сначала поворчал, сказал будет не удобно, лучше когда вентили. Но потом посмотрел, опробовал - сказал, отлично. Дальше со слов мужа, в этом не понимаю: Крепится ручка к корпусу довольно крепко, сделан из латуни, очень толстой и надежной. Швов нет, монолитный. Изгиб не плохой, имеется керамический картридж, что тоже хорошо от протеканий. После установки сидит крепко, закрутил, не шатается. В общем и целом советую. Неплохой вариант. Дальше снова от меня. Дизайн очень красивый, смотрится очень оригинально. На раковине сидит хорошо. Ручка крутится легко, без лишних усилий. Довольно крупная, но удобная и для руки мужа, и для моей, и даже дочка сама открывает и закрывает. Не выскальзывает из рук, ходит очень плавно. Если не крутить его в разные стороны, а оставить в одном положении - не нужно регулировать потом температуру воды. И я и муж советуем этот смеситель для покупки!
+    .reviews__more
+      button.reviews__btn-more(type='button') Показать еще 50
+    

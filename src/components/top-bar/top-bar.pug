@@ -1,0 +1,36 @@
+mixin top-bar
+  include ~@/components/top-bar/_imports/import
+
+  .top-bar
+    ul.top-bar__menu
+      li.top-bar__menu-item
+        a.top-bar__link(href='#')
+          include ~@/components/top-bar/img/icons/1.svg
+      li.top-bar__menu-item
+        a.top-bar__link(href='#')
+          include ~@/components/top-bar/img/icons/2.svg
+      li.top-bar__menu-item
+        button.top-bar__btn-noti(type='button')
+          include ~@/components/top-bar/img/icons/3.svg
+          .top-bar__menu-noti
+      
+    .top-bar__user
+      .top-bar__add-user-group
+        +btn-add
+        span.top-bar__active-user
+          img.top-bar__active-user-logo(src=require('../../components/top-bar/img/am-pm-logo.svg') alt='Логотип компании')
+      
+      .top-bar__user-info
+        p.top-bar__user-name Фёдор Полкунов
+        p.top-bar__user-company-name AM.PM
+      
+      .top-bar__user-more
+        img.top-bar__arrow-icon(src=require('../../components/top-bar/img/arrow.svg') alt='Иконка выпадающего меню')
+
+    +noti-popup
+
+    +user-popup
+
+  
+
+    
