@@ -5,9 +5,38 @@ block content
   #reputation-pg
     +top-bar
 
-    +sidebar
+    +sidebar('reputation')
 
-    +nav(['Общая', 'Список отзывов', 'Поисковая выдача', 'Площадки', 'Ассортимент', 'Конкуренты'])
+    - 
+      var links = [
+        {
+          label: 'Общая',
+          href: 'reputation.html',
+          active: true
+        },
+        {
+          label: 'Список отзывов',
+          href: 'review-list.html'
+        },
+        {
+          label: 'Поисковая выдача',
+          href: 'search-results.html'
+        },
+        {
+          label: 'Площадки',
+          href: 'platforms.html'
+        },
+        {
+          label: 'Ассортимент',
+          href: 'assortment.html'
+        },
+        {
+          label: 'Конкуренты',
+          href: ''
+        },
+      ]
+
+    +nav(links)
 
     .filter
       

@@ -3,4 +3,4 @@ mixin nav(links, mixes)
 
   nav.nav(class=(mixes) && `${mixes}__nav`)
     each link, idx in links
-      a.nav__link(class=(idx === 0) && 'nav__link--active' href='#')= link
+      a.nav__link(class=(link.active) && 'nav__link--active' href=`/${link.href}`)= link.label

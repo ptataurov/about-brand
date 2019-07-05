@@ -1,57 +1,17 @@
 import './reputation.scss'
 import './_imports/import'
 
+import { selectHandler } from '../../assets/js/selectHandler'
+import selectCheckboxHandler from '../../assets/js/selectCheckboxHandler'
 import ApexCharts from 'apexcharts'
-
-import fadeToggle from '../../assets/js/fadeToggle'
 
 window.addEventListener('DOMContentLoaded', () => {
   const page = document.getElementById('reputation-pg')
-  const selects = page.querySelectorAll('.select')
-  selects.forEach(select => {
-    const selectHeader = select.querySelector('.select__header')
-    const selectItems = select.querySelectorAll('.select__item')
-    const body = select.querySelector('.select__body')
+  selectHandler(page.querySelector('[data-type=date-sort'), true)
 
-    fadeToggle(selectHeader, body, 'select__body--show', 200, () => {
-      const otherBody = document.querySelectorAll('.select__body')
-      otherBody.forEach(item => {
-        if (item !== body) {
-          item.classList.remove('fade-in')
-          item.classList.add('fade-out')
+  selectCheckboxHandler(page.querySelector('[data-type=increasing]'))
 
-          setTimeout(() => {
-            item.classList.remove('select__body--show')
-          }, 200)
-        }
-      })
-    })
-
-    selectItems.forEach(listItem => {
-      listItem.addEventListener('click', () => {
-        const choice = listItem.textContent.trim()
-        select.dataset.choice = choice
-        select.querySelector('.select__choice').textContent = choice
-        selectItems.forEach(item => {
-          item !== listItem &&
-            item.querySelector('.checkbox').classList.remove('checkbox--select')
-        })
-        listItem.querySelector('.checkbox').classList.add('checkbox--select')
-      })
-    })
-  })
-
-  const checkboxSelects = document.querySelectorAll('.checkbox-select')
-
-  checkboxSelects.forEach(select => {
-    const checkbox = select.querySelector('.checkbox')
-
-    select.addEventListener('click', () => {
-      const dataSelected = select.dataset.selected
-      select.dataset.selected = dataSelected === 'true' ? 'false' : 'true'
-      checkbox.classList.toggle('checkbox--select')
-    })
-  })
+  selectCheckboxHandler(page.querySelector('[data-type=all]'))
 
   const options = {
     subtitle: {
@@ -105,6 +65,9 @@ window.addEventListener('DOMContentLoaded', () => {
     ],
 
     xaxis: {
+      tooltip: {
+        enabled: false
+      },
       type: 'datetime',
       categories: [
         '2018-09-19T00:00:00',

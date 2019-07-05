@@ -1,2 +1,2 @@
-import './dashboard.scss'
+import './platforms.scss'
 import './_imports/import'

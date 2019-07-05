@@ -17,6 +17,5 @@ mixin table(data, mixes)
             while n++ < data.headers.length
               td= data.self[idx++]
               
-    footer.table__footer
-      +btn('Экспортировать в xlsx', 'table', 'btn--outline-green')
-      +btn('Экспортировать в csv', 'table', 'btn--outline-green')
+    .table__more
+      button.table__btn-more(type='button') Показать еще 50

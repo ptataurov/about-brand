@@ -15,7 +15,19 @@ block content
 
     +sidebar
 
-    +nav(['Популярность', 'Емкость рынка', 'Представленность', 'Цены'])
+    - 
+      var links = [
+        {
+          label: 'Общая',
+          href: 'reputation.html'
+        },
+        {
+          label: 'Список отзывов',
+          href: 'review-list.html'
+        }
+      ]
+
+    +nav(links)
 
     .filter
 

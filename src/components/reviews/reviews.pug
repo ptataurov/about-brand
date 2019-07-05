@@ -222,9 +222,9 @@ mixin reviews(mixes)
               .reviews__table-rating
                 each star, idx in [1, 2, 3, 4, 5]
                   if(idx < item.rating)
-                    include ~@/components/reviews/img/icons/star.svg
+                    include ~@/public/img/icons/star.svg
                   else 
-                    include ~@/components/reviews/img/icons/star-disabled.svg
+                    include ~@/public/img/icons/star-disabled.svg
 
             td
               img.reviews__table-domain-logo(src=`${item.domainLogo}` alt='Логотип домена')

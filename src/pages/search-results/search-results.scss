@@ -1,0 +1,14 @@
+@import '~@/assets/scss/common';
+@import './_imports/import';
+
+#search-results-pg {
+  .filter {
+    margin-bottom: 30px;
+  }
+}
+
+// Mixes
+
+.search-results-pg__indicators-section {
+  margin-bottom: 30px;
+}

@@ -1,2 +1,2 @@
-import './dashboard.scss'
+import './assortment.scss'
 import './_imports/import'

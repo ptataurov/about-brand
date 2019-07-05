@@ -1,0 +1,51 @@
+extends ../layout
+include ./_imports/import
+
+block content
+  #assortment-pg
+    +top-bar
+
+    +sidebar('assortment')
+
+    - 
+      var links = [
+        {
+          label: 'Общая',
+          href: 'reputation.html'
+        },
+        {
+          label: 'Список отзывов',
+          href: 'review-list.html'
+        },
+        {
+          label: 'Поисковая выдача',
+          href: 'search-results.html'
+        },
+        {
+          label: 'Площадки',
+          href: 'platforms.html'
+        },
+        {
+          label: 'Ассортимент',
+          href: 'assortment.html',
+          active: true
+        },
+        {
+          label: 'Конкуренты',
+          href: ''
+        }
+      ]
+
+    +nav(links)     
+
+    .container
+
+      -
+        var data = {
+          headers: ['Названия', 'Товаров', 'Отзывов', 'Процент негатива', 'Товаров на первой странице'],
+          self: ['obi', '248', '210', '9.05%', '89.1%', 'obi', '248', '210', '9.05%', '89.1%', 'obi', '248', '210', '9.05%', '89.1%', 'obi', '248', '210', '9.05%', '89.1%', 'obi', '248', '210', '9.05%', '89.1%']
+        }
+
+      +table(data, 'assortment-pg')
+    
+

@@ -1,10 +1,18 @@
-mixin select(type, title, items, isControl, mixes)
+mixin select(type, title, items, isControl, isRating, isTags, mixes)
   include ~@/components/select/_imports/import
 
-  .select(class=(mixes) && `${mixes}__select` data-type=`${type}` data-choice=`${items[0]}`)
+  .select(class=(mixes) && `${mixes}__select` class=(isControl) && 'select--control' data-type=`${type}` data-choice=`${items[0]}`)
     .select__header
       p.select__title= title
-      p.select__choice= items[0]
+      p.select__choice
+        if (isTags)
+          each tag, idx in items
+            if (idx !== 0)
+              span.select__tag(class=(idx !== 1) && 'select__tag--hide' data-value=`${tag}`)
+                | #{tag}
+                button.select__tag-btn-close(type='button')
+        else
+          | #{items[0]}
       img.select__btn-toggle(src=require('../../components/select/img/triangle.svg') alt='Иконка выпадающего списка')
 
     .select__body.fade-out
@@ -14,13 +22,47 @@ mixin select(type, title, items, isControl, mixes)
             input.select__search-input(type='text')
             img.select__search-icon(src=require('../../components/select/img/loupe.svg') alt='Иконка поиска')
 
-      .select__list-container
+      .select__list-container(class=(isRating) && 'select__list-container--rating')
         ul.select__list
           each item, idx in items
             if (idx !== 0)
-              li.select__item
-                +checkbox((idx === 1))
-                | #{item}
+              li.select__item(data-value=`${item}`)
+                if (isRating)
+                  each star, idx in [1, 2, 3, 4, 5]
+                    case item
+                      when 1
+                        if star === 1
+                          include ~@/public/img/icons/star.svg
+                        else
+                          include ~@/public/img/icons/star-disabled.svg
+                        - break
+                      when 2
+                        if star <= 2
+                          include ~@/public/img/icons/star.svg
+                        else
+                          include ~@/public/img/icons/star-disabled.svg
+                        - break
+                      when 3
+                        if star <= 3
+                          include ~@/public/img/icons/star.svg
+                        else
+                          include ~@/public/img/icons/star-disabled.svg
+                        - break
+                      when 4
+                        if star <= 4
+                          include ~@/public/img/icons/star.svg
+                        else
+                          include ~@/public/img/icons/star-disabled.svg
+                        - break
+                      when 5
+                        if star <= 5
+                          include ~@/public/img/icons/star.svg
+                        else
+                          include ~@/public/img/icons/star-disabled.svg
+                        - break
+                else
+                  +checkbox((idx === 1))
+                  | #{item}
 
       if (isControl)
         .select__footer

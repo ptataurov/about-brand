@@ -1,9 +1,10 @@
-mixin sidebar
+mixin sidebar(active)
   include ~@/components/sidebar/_imports/import
+
 
   .sidebar
     .sidebar__top
-      a.sidebar__logo-link(href='/')
+      a.sidebar__logo-link(href=`/reputation.html`)
         img.sidebar__logo(src=require('../../components/sidebar/img/nav-logo.svg') alt='Логотип')
       .sidebar__hamburger-box
         .sidebar__hamburger
@@ -12,56 +13,56 @@ mixin sidebar
       .sidebar__nav
         h6.sidebar__title Репутация
         ul.sidebar__list
-          li.sidebar__item
-            a.sidebar__link(href='#')
+          li.sidebar__item(class=(active === 'reputation') && 'sidebar__item--active')
+            a.sidebar__link(href='/reputation.html')
               include ~@/components/sidebar/img/icons/1.svg
               p.sidebar__link-name Общая
-          li.sidebar__item.sidebar__item--active
-            a.sidebar__link(href='#')
+          li.sidebar__item(class=(active === 'review-list') && 'sidebar__item--active')
+            a.sidebar__link(href='/review-list.html')
               include ~@/components/sidebar/img/icons/2.svg
               p.sidebar__link-name Список отзывов
-          li.sidebar__item
-            a.sidebar__link(href='#')
+          li.sidebar__item(class=(active === 'search-results') && 'sidebar__item--active')
+            a.sidebar__link(href='/search-results.html')
               include ~@/components/sidebar/img/icons/3.svg
               p.sidebar__link-name Поисковая выдача
-          li.sidebar__item
-            a.sidebar__link(href='#')
+          li.sidebar__item(class=(active === 'platforms') && 'sidebar__item--active')
+            a.sidebar__link(href='/platforms.html')
               include ~@/components/sidebar/img/icons/4.svg
               p.sidebar__link-name Площадки
-          li.sidebar__item
-            a.sidebar__link(href='#')
+          li.sidebar__item(class=(active === 'assortment') && 'sidebar__item--active')
+            a.sidebar__link(href='/assortment.html')
               include ~@/components/sidebar/img/icons/5.svg
               p.sidebar__link-name Ассортимент
-          li.sidebar__item
+          li.sidebar__item(class=(active === '') && 'sidebar__item--active')
             a.sidebar__link(href='#')
               include ~@/components/sidebar/img/icons/6.svg
               p.sidebar__link-name Конкуренты
       .sidebar__nav
         h6.sidebar__title Продажи
         ul.sidebar__list
-          li.sidebar__item
+          li.sidebar__item(class=(active === '') && 'sidebar__item--active')
             a.sidebar__link(href='#')
               include ~@/components/sidebar/img/icons/7.svg
               p.sidebar__link-name Емкость рынка
-          li.sidebar__item
+          li.sidebar__item(class=(active === '') && 'sidebar__item--active')
             a.sidebar__link(href='#')
               include ~@/components/sidebar/img/icons/8.svg
               p.sidebar__link-name Популярность
-          li.sidebar__item
+          li.sidebar__item(class=(active === '') && 'sidebar__item--active')
             a.sidebar__link(href='#')
               include ~@/components/sidebar/img/icons/9.svg
               p.sidebar__link-name Представленность
-          li.sidebar__item
+          li.sidebar__item(class=(active === '') && 'sidebar__item--active')
             a.sidebar__link(href='#')
               include ~@/components/sidebar/img/icons/10.svg
               p.sidebar__link-name Цены
     .sidebar__bottom
       ul.sidebar__bottom-list
-        li.sidebar__bottom-item
+        li.sidebar__bottom-item(class=(active === '') && 'sidebar__item--active')
           a.sidebar__link(href='#')
             include ~@/components/sidebar/img/icons/11.svg
             p.sidebar__link-name Помощь
-        li.sidebar__bottom-item
+        li.sidebar__bottom-item(class=(active === '') && 'sidebar__item--active')
           a.sidebar__link(href='#')
             include ~@/components/sidebar/img/icons/12.svg
             p.sidebar__link-name Настройки
