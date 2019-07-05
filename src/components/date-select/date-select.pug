@@ -2,4 +2,7 @@ mixin date-select
   include ./_imports/import
 
     .date-select#reportrange
-      span.date-select__input
+      include ~@/components/date-select/img/calendar.svg
+      p.date-select__label Период
+      span.date-select__input Период не выбран
+      include ~@/components/date-select/img/triangle.svg

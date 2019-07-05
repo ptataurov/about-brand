@@ -7,9 +7,6 @@ import moment from 'moment'
 moment.locale('ru')
 
 $(function() {
-  const start = moment().subtract(29, 'days')
-  const end = moment()
-
   function cb(start, end) {
     $('#reportrange span').html(
       start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY')
@@ -41,15 +38,8 @@ $(function() {
       },
       startDate: this.start ? this.start : moment(),
       endDate: this.end ? this.start : moment(),
-      opens: 'right',
-      ranges: {
-        'За неделю': [moment().subtract(6, 'days'), moment()],
-        'За месяц': [moment().subtract(29, 'days'), moment()],
-        'За год': [moment().subtract(1, 'years'), moment()]
-      }
+      opens: 'right'
     },
     cb
   )
-
-  // cb(start, end)
 })

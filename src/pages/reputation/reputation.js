@@ -12,8 +12,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const selectHeader = select.querySelector('.select__header')
     const selectItems = select.querySelectorAll('.select__item')
     const body = select.querySelector('.select__body')
-    const searchGroup = select.querySelector('.select__search-group')
-    // const input = searchGroup.querySelector('.select__search-input')
 
     fadeToggle(selectHeader, body, 'select__body--show', 200, () => {
       const otherBody = document.querySelectorAll('.select__body')
@@ -29,18 +27,16 @@ window.addEventListener('DOMContentLoaded', () => {
       })
     })
 
-    // input.addEventListener('click', () => {
-    //   !input.value && searchGroup.classList.add('select__search-group--input')
-    // })
-
-    // input.addEventListener('blur', () => {
-    //   !input.value &&
-    //     searchGroup.classList.remove('select__search-group--input')
-    // })
-
-    selectItems.forEach(item => {
-      item.addEventListener('click', () => {
-        item.querySelector('.checkbox').classList.toggle('checkbox--select')
+    selectItems.forEach(listItem => {
+      listItem.addEventListener('click', () => {
+        const choice = listItem.textContent.trim()
+        select.dataset.choice = choice
+        select.querySelector('.select__choice').textContent = choice
+        selectItems.forEach(item => {
+          item !== listItem &&
+            item.querySelector('.checkbox').classList.remove('checkbox--select')
+        })
+        listItem.querySelector('.checkbox').classList.add('checkbox--select')
       })
     })
   })
@@ -51,14 +47,45 @@ window.addEventListener('DOMContentLoaded', () => {
     const checkbox = select.querySelector('.checkbox')
 
     select.addEventListener('click', () => {
+      const dataSelected = select.dataset.selected
+      select.dataset.selected = dataSelected === 'true' ? 'false' : 'true'
       checkbox.classList.toggle('checkbox--select')
     })
   })
 
   const options = {
+    subtitle: {
+      text: 'Количество отзывов',
+      align: 'left',
+      margin: 10,
+      offsetX: 0,
+      offsetY: 0,
+      floating: false,
+      style: {
+        fontSize: '13px',
+        color: '#A3A7B1'
+      }
+    },
     chart: {
+      foreColor: '#9DA5B1',
+      fontFamily: 'Rubik, "sans-serif"',
       height: 350,
-      type: 'area'
+      type: 'area',
+
+      toolbar: {
+        show: true,
+        tools: {
+          download: '<div class="apexcharts__download"><span></span></div>',
+          selection: false,
+          zoom: false,
+          zoomin: false,
+          zoomout: false,
+          pan: false,
+          reset: false,
+          customIcons: []
+        },
+        autoSelected: 'zoom'
+      }
     },
     dataLabels: {
       enabled: false
@@ -68,11 +95,11 @@ window.addEventListener('DOMContentLoaded', () => {
     },
     series: [
       {
-        name: 'series1',
+        name: 'Всего',
         data: [31, 40, 28, 51, 42, 109, 100]
       },
       {
-        name: 'series2',
+        name: 'Негативные отзывы',
         data: [11, 32, 45, 32, 34, 52, 41]
       }
     ],
@@ -90,8 +117,48 @@ window.addEventListener('DOMContentLoaded', () => {
       ]
     },
     tooltip: {
+      enabled: true,
+      enabledOnSeries: undefined,
+      shared: true,
+      followCursor: false,
+      intersect: false,
+      inverseOrder: false,
+      custom: undefined,
+      fillSeriesColor: false,
+      theme: false,
+      style: {
+        fontSize: '11px',
+        fontFamily: 'Rubik, "sans-serif"'
+      },
+      onDatasetHover: {
+        highlightDataSeries: false
+      },
       x: {
-        format: 'dd/MM/yy HH:mm'
+        show: true,
+        format: 'dd MMM',
+        formatter: undefined
+      },
+      y: {
+        formatter: undefined,
+        title: {
+          formatter: seriesName => seriesName
+        }
+      },
+      z: {
+        formatter: undefined,
+        title: 'Size: '
+      },
+      marker: {
+        show: false
+      },
+      items: {
+        display: 'flex'
+      },
+      fixed: {
+        enabled: false,
+        position: 'topRight',
+        offsetX: 0,
+        offsetY: 0
       }
     }
   }

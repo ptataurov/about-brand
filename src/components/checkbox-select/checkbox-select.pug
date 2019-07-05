@@ -1,7 +1,7 @@
 mixin checkbox-select(type, label)
   include ~@/components/checkbox-select/_imports/import
 
-  .checkbox-select(data-type=`${type}`)
+  .checkbox-select(data-type=`${type}` data-selected='false')
     +checkbox
 
     p.checkbox-select__label= label

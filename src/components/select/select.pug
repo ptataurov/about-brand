@@ -1,12 +1,11 @@
-mixin select(isControl, type, title, items, mixes)
+mixin select(type, title, items, isControl, mixes)
   include ~@/components/select/_imports/import
 
-  .select(class=(mixes) && `${mixes}__select` data-type=`${type}`)
+  .select(class=(mixes) && `${mixes}__select` data-type=`${type}` data-choice=`${items[0]}`)
     .select__header
       p.select__title= title
       p.select__choice= items[0]
       img.select__btn-toggle(src=require('../../components/select/img/triangle.svg') alt='Иконка выпадающего списка')
-      
 
     .select__body.fade-out
       if (isControl)
@@ -19,8 +18,8 @@ mixin select(isControl, type, title, items, mixes)
         ul.select__list
           each item, idx in items
             if (idx !== 0)
-              li.select__item.select__item--select
-                +checkbox
+              li.select__item
+                +checkbox((idx === 1))
                 | #{item}
 
       if (isControl)

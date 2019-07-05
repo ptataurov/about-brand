@@ -4,8 +4,166 @@
 @import '~daterangepicker/daterangepicker.css';
 
 .date-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+  padding-right: 15px;
+  padding-left: 15px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: -2px 2px 4px rgba(128, 152, 213, 0.074983);
+  cursor: pointer;
+
+  *:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+
+.date-select__label {
+  color: #554b60;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1.12px;
+  text-transform: uppercase;
 }
 
 .date-select__input {
-  cursor: pointer;
+  color: #9da5b1;
+  font-size: 13px;
+  line-height: 14px;
+}
+
+.daterangepicker {
+  font-family: Rubik, 'sans-serif';
+  border: none;
+  border-radius: 4px;
+  box-shadow: -3px 8px 22px #dfe2ef;
+
+  &.opensright:after,
+  &.opensright:before {
+    display: none;
+  }
+
+  * {
+    font-weight: 400 !important;
+  }
+
+  .drp-calendar.left {
+    margin: 20px 10px 20px 20px !important;
+    padding: 0 !important;
+  }
+
+  .drp-calendar.right {
+    margin: 20px 20px 20px 10px !important;
+    padding: 0 !important;
+  }
+
+  .calendar-table {
+    table {
+      border-collapse: separate;
+      border-spacing: 5px;
+    }
+
+    .month {
+      color: #2e5bff;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+    }
+
+    .next,
+    .prev {
+      width: 30px;
+      height: 30px;
+
+      span {
+        border-color: #2e5bff;
+      }
+
+      &:hover {
+        background-color: transparent;
+
+        span {
+          border-color: lighten(#2e5bff, 20%);
+        }
+      }
+    }
+
+    .in-range {
+      color: #000;
+      background-color: #f0f0f0;
+    }
+
+    th {
+      color: rgba(38, 33, 43, 0.3);
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 21px;
+    }
+
+    td {
+      width: 30px;
+      height: 30px;
+      color: #6d7381;
+      font-size: 13px;
+      line-height: 15px;
+      border: 1px solid transparent;
+      transition: color none;
+
+      &:hover {
+        color: #fff;
+        background-color: #2e5bff;
+      }
+    }
+  }
+
+  td.start-date.end-date {
+    color: #fff;
+    background-color: #2e5bff;
+  }
+
+  td.active {
+    color: #fff !important;
+    background-color: #2e5bff !important;
+  }
+
+  .btn {
+    padding: 10px 40px !important;
+    color: #fff !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    line-height: 21px;
+    background-color: #2e5bff;
+    border: 1.5px solid transparent;
+    border-radius: 2px;
+
+    &:hover {
+      color: #2e5bff !important;
+      background-color: transparent;
+      border-color: #2e5bff;
+    }
+  }
+
+  .btn-default {
+    margin-left: 0 !important;
+    color: rgba(38, 33, 43, 0.8) !important;
+    background-color: transparent;
+    border: 1.5px solid #edeef3;
+
+    &:hover {
+      color: rgba(38, 33, 43, 0.5) !important;
+      border-color: #edeef3;
+    }
+  }
+
+  .drp-buttons {
+    padding: 20px;
+    border-color: rgba(233, 235, 240, 0.5);
+  }
+
+  .drp-selected {
+    display: none;
+  }
 }

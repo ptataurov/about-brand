@@ -1,7 +1,128 @@
 @import '~@/components/area-chart/_imports/import';
 
 .area-chart {
+  padding: 30px;
   background: #fff;
   border-radius: 4px;
   box-shadow: -2px 2px 4px rgba(128, 152, 213, 0.074983);
+  transform: none;
+}
+
+.apexcharts-canvas {
+}
+
+.apexcharts-legend {
+  bottom: 0 !important;
+
+  .apexcharts-legend-series {
+    margin: 0 !important;
+    &:nth-child(1) {
+      margin-right: 40px !important;
+
+      .apexcharts-legend-marker {
+        background-color: #5ad4a1 !important;
+      }
+    }
+    &:nth-child(2) {
+      .apexcharts-legend-marker {
+        background-color: #e53654 !important;
+      }
+    }
+  }
+}
+
+.apexcharts-legend-marker {
+  width: 15px !important;
+  height: 3px !important;
+  margin-right: 10px !important;
+  border-radius: 2px !important;
+}
+
+.apexcharts-legend-text {
+  font-family: Rubik, 'sans-serif' !important;
+}
+
+.apexcharts-menu-icon {
+  width: 30px !important;
+  height: 30px !important;
+  transform: scale(1) !important;
+}
+
+.apexcharts__download {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: #2e5bff;
+  border-radius: 2px;
+
+  &:before,
+  &:after {
+    width: 3px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 50%;
+    content: '';
+  }
+
+  &:before {
+    margin-right: 3px;
+  }
+
+  span {
+    width: 3px;
+    height: 3px;
+    margin-right: 3px;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+}
+
+.apexcharts-toolbar {
+  flex-direction: column;
+  align-items: flex-end !important;
+}
+
+.apexcharts-menu {
+  position: static !important;
+  min-width: 160px !important;
+  margin-top: 5px;
+  padding: 0 !important;
+  text-align: left;
+  border: 1px solid #eef2ff !important;
+  border-radius: 3px !important;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05),
+    0px 1px 2px rgba(46, 91, 255, 0.1);
+}
+
+.apexcharts-menu-item {
+  padding: 15px !important;
+  color: #26212b !important;
+  font-size: 13px !important;
+
+  &:hover {
+    background-color: darken(#fff, 2%) !important;
+  }
+
+  &:first-child {
+    border-bottom: 1px solid #eef2ff !important;
+    transform: translateY(0.5px);
+  }
+
+  &:last-child {
+    border-top: 1px solid #eef2ff !important;
+    transform: translateY(-0.5px);
+  }
+}
+
+.apexcharts-subtitle-text {
+  letter-spacing: 1.12px;
+  text-transform: uppercase;
+}
+
+.apexcharts-tooltip {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0px 7px 15px rgba(218, 218, 218, 0.5);
 }
