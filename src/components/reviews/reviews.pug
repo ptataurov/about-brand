@@ -19,9 +19,7 @@ mixin reviews(mixes)
           th Статус
           th Поиск
           th
-            a.reviews__table-export-link(href='#')
-              include ~@/components/reviews/img/icons/export.svg
-              | Экспорт
+            +btn-export
 
       tbody.reviews__table-body
         -

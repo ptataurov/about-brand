@@ -1,0 +1,68 @@
+{
+  "reputationLinks": [
+    {
+      "label": "Общая",
+      "href": "reputation.html",
+      "icon": 1
+    },
+    {
+      "label": "Список отзывов",
+      "href": "review-list.html",
+      "icon": 2
+    },
+    {
+      "label": "Поисковая выдача",
+      "href": "search-results.html",
+      "icon": 3
+    },
+    {
+      "label": "Площадки",
+      "href": "platforms.html",
+      "icon": 4
+    },
+    {
+      "label": "Ассортимент",
+      "href": "assortment.html",
+      "icon": 5
+    },
+    {
+      "label": "Конкуренты",
+      "href": "",
+      "icon": 6
+    }
+  ],
+  "salesLinks": [
+    {
+      "label": "Емкость рынка",
+      "href": "#",
+      "icon": 7
+    },
+    {
+      "label": "Популярность",
+      "href": "#",
+      "icon": 8
+    },
+    {
+      "label": "Представленность",
+      "href": "#",
+      "icon": 9
+    },
+    {
+      "label": "Цены",
+      "href": "#",
+      "icon": 10
+    }
+  ],
+  "bottomLinks": [
+    {
+      "label": "Помощь",
+      "href": "#",
+      "icon": 11
+    },
+    {
+      "label": "Настройки",
+      "href": "#",
+      "icon": 12
+    }
+  ]
+}

@@ -1,6 +1,7 @@
-mixin sidebar(active)
+mixin sidebar(activeIdx)
   include ~@/components/sidebar/_imports/import
 
+  - const links = require('../../assets/data/links.json')
 
   .sidebar
     .sidebar__top
@@ -13,56 +14,64 @@ mixin sidebar(active)
       .sidebar__nav
         h6.sidebar__title Репутация
         ul.sidebar__list
-          li.sidebar__item(class=(active === 'reputation') && 'sidebar__item--active')
-            a.sidebar__link(href='/reputation.html')
-              include ~@/components/sidebar/img/icons/1.svg
-              p.sidebar__link-name Общая
-          li.sidebar__item(class=(active === 'review-list') && 'sidebar__item--active')
-            a.sidebar__link(href='/review-list.html')
-              include ~@/components/sidebar/img/icons/2.svg
-              p.sidebar__link-name Список отзывов
-          li.sidebar__item(class=(active === 'search-results') && 'sidebar__item--active')
-            a.sidebar__link(href='/search-results.html')
-              include ~@/components/sidebar/img/icons/3.svg
-              p.sidebar__link-name Поисковая выдача
-          li.sidebar__item(class=(active === 'platforms') && 'sidebar__item--active')
-            a.sidebar__link(href='/platforms.html')
-              include ~@/components/sidebar/img/icons/4.svg
-              p.sidebar__link-name Площадки
-          li.sidebar__item(class=(active === 'assortment') && 'sidebar__item--active')
-            a.sidebar__link(href='/assortment.html')
-              include ~@/components/sidebar/img/icons/5.svg
-              p.sidebar__link-name Ассортимент
-          li.sidebar__item(class=(active === '') && 'sidebar__item--active')
-            a.sidebar__link(href='#')
-              include ~@/components/sidebar/img/icons/6.svg
-              p.sidebar__link-name Конкуренты
+          each link, idx in links.reputationLinks
+            li.sidebar__item(class=(activeIdx === idx) && 'sidebar__item--active')
+              a.sidebar__link(href=`${link.href}`)
+                case link.icon
+                  when 1 
+                    include ~@/public/img/icons/links/1.svg
+                    - break
+                  when 2 
+                    include ~@/public/img/icons/links/2.svg
+                    - break
+                  when 3 
+                    include ~@/public/img/icons/links/3.svg
+                    - break
+                  when 4 
+                    include ~@/public/img/icons/links/4.svg
+                    - break
+                  when 5 
+                    include ~@/public/img/icons/links/5.svg
+                    - break
+                  when 6 
+                    include ~@/public/img/icons/links/6.svg
+                    - break
+
+                p.sidebar__link-name= link.label
+
       .sidebar__nav
         h6.sidebar__title Продажи
         ul.sidebar__list
-          li.sidebar__item(class=(active === '') && 'sidebar__item--active')
-            a.sidebar__link(href='#')
-              include ~@/components/sidebar/img/icons/7.svg
-              p.sidebar__link-name Емкость рынка
-          li.sidebar__item(class=(active === '') && 'sidebar__item--active')
-            a.sidebar__link(href='#')
-              include ~@/components/sidebar/img/icons/8.svg
-              p.sidebar__link-name Популярность
-          li.sidebar__item(class=(active === '') && 'sidebar__item--active')
-            a.sidebar__link(href='#')
-              include ~@/components/sidebar/img/icons/9.svg
-              p.sidebar__link-name Представленность
-          li.sidebar__item(class=(active === '') && 'sidebar__item--active')
-            a.sidebar__link(href='#')
-              include ~@/components/sidebar/img/icons/10.svg
-              p.sidebar__link-name Цены
+          each link, idx in links.salesLinks
+            li.sidebar__item(class=(activeIdx - 6 === idx) && 'sidebar__item--active')
+              a.sidebar__link(href=`${link.href}`)
+                case link.icon
+                  when 7 
+                    include ~@/public/img/icons/links/7.svg
+                    - break
+                  when 8 
+                    include ~@/public/img/icons/links/8.svg
+                    - break
+                  when 9
+                    include ~@/public/img/icons/links/9.svg
+                    - break
+                  when 10 
+                    include ~@/public/img/icons/links/10.svg
+                    - break
+
+                p.sidebar__link-name= link.label
+
     .sidebar__bottom
       ul.sidebar__bottom-list
-        li.sidebar__bottom-item(class=(active === '') && 'sidebar__item--active')
-          a.sidebar__link(href='#')
-            include ~@/components/sidebar/img/icons/11.svg
-            p.sidebar__link-name Помощь
-        li.sidebar__bottom-item(class=(active === '') && 'sidebar__item--active')
-          a.sidebar__link(href='#')
-            include ~@/components/sidebar/img/icons/12.svg
-            p.sidebar__link-name Настройки
+        each link, idx in links.bottomLinks
+          li.sidebar__bottom-item(class=(activeIdx - 10 === idx) && 'sidebar__item--active')
+            a.sidebar__link(href=`${link.href}`)
+              case link.icon
+                when 11 
+                  include ~@/public/img/icons/links/11.svg
+                  - break
+                when 12
+                  include ~@/public/img/icons/links/12.svg
+                  - break
+
+              p.sidebar__link-name= link.label

@@ -2,47 +2,21 @@ extends ../layout
 include ./_imports/import
 
 block content
+
+  - const data = require('./data.json')
+
   #review-list-pg
     +top-bar
 
-    +sidebar('review-list')
+    +sidebar(1)
 
-    - 
-      var links = [
-        {
-          label: 'Общая',
-          href: 'reputation.html'
-        },
-        {
-          label: 'Список отзывов',
-          href: 'review-list.html',
-          active: true
-        },
-        {
-          label: 'Поисковая выдача',
-          href: 'search-results.html'
-        },
-        {
-          label: 'Площадки',
-          href: 'platforms.html'
-        },
-        {
-          label: 'Ассортимент',
-          href: 'assortment.html'
-        },
-        {
-          label: 'Конкуренты',
-          href: ''
-        },
-      ]
-
-    +nav(links)
+    +nav(1, true)
 
     .filter
       
-      +select('platforms', 'Площадка', ['Не выбрано', 'Goods', 'Leroy', 'Ozon', 'Obi', 'Ulmart'], false, false, true)
+      +select('platforms', 'Площадка', data.platforms, false, false, true)
      
-      +select('goods', 'Товар', ['Все товары', 'Лейка для душа AM.PM Awe Extra F0215200', 'Лейка для душа AM.PM Bliss F0253100', 'Лейка для душа AM.PM Spirit F0270064', 'Лейка для душа AM.PM Gem F0290000', 'Лейка для душа AM.PM Like F0280000', 'Лейка для душа AM.PM Spirit 2.0 F0270A000', 'Лейка для душа AM.PM Awe Extra F0215200', 'Лейка для душа AM.PM Bliss F0253100', 'Лейка для душа AM.PM Spirit F0270064', 'Лейка для душа AM.PM Gem F0290000', 'Лейка для душа AM.PM Like F0280000', 'Лейка для душа AM.PM Spirit 2.0 F0270A000', 'Лейка для душа AM.PM Awe Extra F0215200', 'Лейка для душа AM.PM Bliss F0253100', 'Лейка для душа AM.PM Spirit F0270064', 'Лейка для душа AM.PM Gem F0290000', 'Лейка для душа AM.PM Like F0280000', 'Лейка для душа AM.PM Spirit 2.0 F0270A000'], true)
+      +select('goods', 'Товар', data.goods, true)
       
       +select('rating', 'Рейтинг', ['Не выбрано', 1, 2, 3, 4, 5], false, true)
 

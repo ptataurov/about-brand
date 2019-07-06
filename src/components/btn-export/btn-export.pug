@@ -1,0 +1,6 @@
+mixin btn-export(mixes)
+  include ./_imports/import
+
+  button.btn-export(class=(mixes) && `${mixes}__btn-export` type='button')
+    img.btn-export__icon(src=require('../../components/btn-export/img/export.svg') alt='Иконка')
+    | Экспорт

@@ -1,6 +1,8 @@
-mixin nav(links, mixes)
+mixin nav(activeIdx, isReputation, mixes)
   include ~@/components/nav/_imports/import
 
+  - const data = require('../../assets/data/links.json')
+
   nav.nav(class=(mixes) && `${mixes}__nav`)
-    each link, idx in links
-      a.nav__link(class=(link.active) && 'nav__link--active' href=`/${link.href}`)= link.label
+    each link, idx in (isReputation) ? data.reputationLinks : data.salesLinks
+      a.nav__link(class=(idx === activeIdx) && 'nav__link--active' href=`/${link.href}`)= link.label

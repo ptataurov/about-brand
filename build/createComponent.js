@@ -15,8 +15,7 @@ mkdirSync(componentPath)
 
 writeFileSync(
   `${componentPath}/${componentName}.scss`,
-  `@import '~@/assets/scss/mixins';
-@import './_imports/import';`
+  `@import './_imports/import';`
 )
 writeFileSync(
   `${componentPath}/${componentName}.pug`,

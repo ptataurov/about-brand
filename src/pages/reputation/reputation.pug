@@ -2,41 +2,15 @@ extends ../layout
 include ./_imports/import
 
 block content
+
+  - const data = require('./data.json')
+
   #reputation-pg
     +top-bar
 
-    +sidebar('reputation')
+    +sidebar(0)
 
-    - 
-      var links = [
-        {
-          label: 'Общая',
-          href: 'reputation.html',
-          active: true
-        },
-        {
-          label: 'Список отзывов',
-          href: 'review-list.html'
-        },
-        {
-          label: 'Поисковая выдача',
-          href: 'search-results.html'
-        },
-        {
-          label: 'Площадки',
-          href: 'platforms.html'
-        },
-        {
-          label: 'Ассортимент',
-          href: 'assortment.html'
-        },
-        {
-          label: 'Конкуренты',
-          href: ''
-        },
-      ]
-
-    +nav(links)
+    +nav(0, true)
 
     .filter
       
@@ -48,36 +22,10 @@ block content
 
       +date-select
 
-
-
     .container
-      - 
-        var items = [
-          {
-            type: 'Отзывы',
-            value: '1 549',
-            isNegative: false
-          },
-          {
-            type: 'Негатив',
-            value: '23.63%',
-            isNegative: true
-          },
-          {
-            type: 'Оценка',
-            value: '4.14',
-            isNegative: false
-          }
-        ]
-
-      +indicators-section(items, 'reputation-pg')
+    
+      +indicators-section(data.indicatorsData, 'reputation-pg')
 
       +area-chart('reputation-pg')
 
-      -
-        var data = {
-          headers: ['Даты', 'Отзывов', 'Негатива', 'Оценка'],
-          self: ['август 2018 - июль 2019', '1196', '24.9%', '4.1', 'июль 2018', '18',	'15%',	'4.39', 'август 2018',	'58',	'4%',	'4.55', 'сентябрь 2018',	'42',	'12%',	'4.19', 'октябрь 2018',	'48',	'16%',	'4.27', 'ноябрь 2018',	'57',	'11%',	'3.95', 'декабрь 2018',	'74',	'7%',	'4.41', 'январь 2019',	'43',	'18%',	'4', 'февраль 2019',	'86',	'5%',	'4.67', 'март 2019',	'99',	'10%',	'4.53', 'апрель 2019',	'51',	'4%',	'4.45', 'май 2019',	'0',	'0%',	'0', 'июнь 2019',	'0',	'0%',	'0', 'июль 2019',	'0',	'0%',	]
-        }
-
-      +table(data, 'reputation-pg')
+      +table(data.tableData, 'reputation-pg')
