@@ -2,7 +2,7 @@ const { writeFileSync, readFileSync } = require('fs')
 
 const { getDirectoriesBasenames } = require('./utils.js')
 
-const updateDependencies = require('./updateDependencies.js')
+const updateDependencies = require('./updateDep.js')
 const dirs = require('./dirs')
 
 const pageNames = getDirectoriesBasenames(`${dirs.pages}`)

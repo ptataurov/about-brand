@@ -1,29 +1,23 @@
-const {
-  writeFileSync,
-  writeSync,
-  readFileSync,
-  openSync,
-  close
-} = require('fs')
+const { writeFileSync, readFileSync, appendFileSync } = require('fs')
 const dirs = require('./dirs')
-const resetDependencies = require('./resetDependencies.js')
+const resetDependencies = require('./resetDep.js')
 
 const updateDependencies = (isPage, targetName) => {
   resetDependencies(isPage, targetName)
+
+  const property = isPage ? 'pages' : 'components'
 
   const targetPath = isPage ? dirs.pages : dirs.components
   const dependenciesPath = `${dirs.src}/globalDependencies.json`
 
   const targetDependencies = JSON.parse(
     readFileSync(`${targetPath}/${targetName}/dependencies.json`)
-  ).reverse()
+  )
 
   const globalDependencies = JSON.parse(readFileSync(dependenciesPath))
 
   const addDependence = dependence => {
-    globalDependencies[isPage ? 'pages' : 'components'][targetName].unshift(
-      dependence
-    )
+    globalDependencies[property][targetName].push(dependence)
 
     writeFileSync(dependenciesPath, JSON.stringify(globalDependencies))
   }
@@ -38,37 +32,21 @@ const updateDependencies = (isPage, targetName) => {
     }
 
     for (let key in map) {
-      const str = map[key]
-      const file = `${targetPath}/${targetName}/_imports/import.${key}`
-      const data = readFileSync(file)
-      const fd = openSync(file, 'w+')
-
-      writeSync(fd, str, 0, str.length, 0)
-      writeSync(fd, data, 0, data.length, str.length)
-
-      close(fd, () => {})
+      const data = map[key]
+      appendFileSync(`${targetPath}/${targetName}/_imports/import.${key}`, data)
     }
   }
 
-  const isIncluded = dependence =>
-    globalDependencies[isPage ? 'pages' : 'components'][targetName].some(
-      el => el === dependence
-    )
+  const isContains = dependence =>
+    globalDependencies[property][targetName].some(el => el === dependence)
 
   targetDependencies.forEach(dependence => {
-    if (!isIncluded(dependence)) {
+    if (!isContains(dependence)) {
       rewriteFiles(dependence)
 
       addDependence(dependence)
     }
   })
-}
-
-if (process.argv[2]) {
-  const isPage = process.argv[2] === 'page'
-  const targetName = process.argv[3]
-
-  updateDependencies(isPage, targetName)
 }
 
 module.exports = updateDependencies

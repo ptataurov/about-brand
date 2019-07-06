@@ -1,15 +1,14 @@
 const webpack = require('webpack')
-const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const { getDirectoriesBasenames } = require('./build/utils.js')
+const dirs = require('./build/dirs.js')
 const modules = require('./webpack.modules')
 
 const isDev = process.env.NODE_ENV === 'development'
-const pages = getDirectoriesBasenames(path.resolve('./src/pages'))
+const pages = getDirectoriesBasenames(dirs.pages)
 
 // const components = getDirectoriesBasenames(path.resolve('./src/components'))
 
@@ -35,17 +34,17 @@ const entries = pages.reduce((acc, page) => {
 }, {})
 
 const config = {
-  context: path.resolve(__dirname, 'src'),
+  context: dirs.src,
   entry: entries,
   devtool: isDev && 'inline-source-map',
   output: {
     filename: '[name]/[name].js',
-    path: path.resolve(__dirname, 'dist')
+    path: dirs.dist
   },
   resolve: {
     extensions: ['.js', '.scss', '.pug'],
     alias: {
-      '@': path.resolve(__dirname, 'src')
+      '@': dirs.src
     }
   },
   optimization: {

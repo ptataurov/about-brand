@@ -12,9 +12,7 @@
     "build:afterEnv": "rm -rf ./dist && webpack -p",
     "create::component": "node ./build/createComponent.js",
     "create::page": "node ./build/createPage.js",
-    "update::deps": "npm run reset::deps && node ./build/updateDependencies.js",
-    "reset::deps": "node ./build/resetDependencies.js",
-    "update::allDeps": "node ./build/updateAllDependencies.js"
+    "update::deps": "node ./build/updateDeps.js"
   },
   "keywords": [],
   "author": "Pavel Tataurov",
