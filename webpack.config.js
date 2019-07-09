@@ -6,13 +6,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const { getDirectoriesBasenames } = require('./build/utils.js')
 const dirs = require('./build/dirs.js')
-
+const path = require('path')
 const modules = require('./webpack.modules')
 
 const isDev = process.env.NODE_ENV === 'development'
 const pages = getDirectoriesBasenames(dirs.pages)
 
-// const components = getDirectoriesBasenames(path.resolve('./src/components'))
+const components = getDirectoriesBasenames(path.resolve('./src/components'))
 
 const instances = pages.map(page => {
   return new HtmlWebpackPlugin({
@@ -23,17 +23,17 @@ const instances = pages.map(page => {
   })
 })
 
-// const componentsEntries = components.reduce((acc, component) => {
-//   acc[component] = `./components/${component}/${component}.js`
+const componentsEntries = components.reduce((acc, component) => {
+  acc[component] = `./components/${component}/${component}.js`
 
-//   return acc
-// }, {})
+  return acc
+}, {})
 
 const entries = pages.reduce((acc, page) => {
   acc[page] = `./pages/${page}/${page}.js`
 
   return acc
-}, {})
+}, componentsEntries)
 
 const config = {
   context: dirs.src,

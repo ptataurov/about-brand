@@ -1,0 +1,2 @@
+
+import '../noti-popup.scss'

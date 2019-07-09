@@ -8,7 +8,7 @@
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=development npm run dev:afterEnv",
     "dev:afterEnv": "webpack-dev-server",
-    "build": "cross-env NODE_ENV=production npm run build:afterEnv",
+    "build": "npm run update::deps && node ./build/importMixins.js && cross-env NODE_ENV=production npm run build:afterEnv",
     "build:afterEnv": "rm -rf ./dist && webpack -p",
     "create::component": "node ./build/createComponent.js",
     "create::page": "node ./build/createPage.js",
@@ -53,7 +53,8 @@
     "daterangepicker": "^3.0.5",
     "jquery": "^3.4.1",
     "moment": "^2.24.0",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "sass-resources-loader": "^2.0.1"
   },
   "browserslist": [
     "defaults"

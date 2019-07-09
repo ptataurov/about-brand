@@ -10,6 +10,7 @@ componentNames.forEach(name => {
   appendFileSync(
     `${dirs.components}/${name}/_imports/import.js`,
     `
-import '../${name}.scss'`
+import '../${name}.scss'
+`
   )
 })

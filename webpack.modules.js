@@ -1,6 +1,8 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const isDev = process.env.NODE_ENV.trim() === 'development'
 
+const dirs = require('./build/dirs')
+
 module.exports = {
   rules: [
     {
@@ -20,7 +22,13 @@ module.exports = {
             plugins: [require('autoprefixer')()]
           }
         },
-        'sass-loader'
+        'sass-loader',
+        {
+          loader: 'sass-resources-loader',
+          options: {
+            resources: `${dirs.src}/assets/scss/mixins.scss`
+          }
+        }
       ]
     },
     {

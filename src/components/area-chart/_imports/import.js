@@ -1,0 +1,2 @@
+
+import '../area-chart.scss'
