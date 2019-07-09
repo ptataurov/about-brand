@@ -16,17 +16,8 @@
 
   .apexcharts-legend-series {
     margin: 0 !important;
-    &:nth-child(1) {
+    &:not(:last-child) {
       margin-right: 40px !important;
-
-      .apexcharts-legend-marker {
-        background-color: #5ad4a1 !important;
-      }
-    }
-    &:nth-child(2) {
-      .apexcharts-legend-marker {
-        background-color: #e53654 !important;
-      }
     }
   }
 }
@@ -116,7 +107,7 @@
   }
 }
 
-.apexcharts-subtitle-text {
+.apexcharts-title-text {
   letter-spacing: 1.12px;
   text-transform: uppercase;
 }
@@ -140,16 +131,9 @@
 
 .apexcharts-tooltip-series-group {
   padding: 0 !important;
-
-  &:last-child {
-    .apexcharts-tooltip-text-label {
-      color: #e53654 !important;
-    }
-  }
 }
 
 .apexcharts-tooltip-text-label {
-  color: #5ad4a1 !important;
   font-weight: 500 !important;
   font-size: 11px !important;
   font-family: Montserrat, 'sans-serif' !important;

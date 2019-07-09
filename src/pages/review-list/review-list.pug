@@ -17,12 +17,20 @@ block content
       +select('platforms', 'Площадка', data.platforms, false, false, true)
      
       +select('goods', 'Товар', data.goods, true)
+
+
+      +select('in-search', 'В выдаче', ['Не выбрано', 'Не выбрано', 'Да', 'Нет'])
+
+      +select('status', 'Статус', ['Новый', 'Новый', 'Обработан'])
+      
+      +select-input('autor', 'Автор', 'Введите имя')
       
       +select('rating', 'Рейтинг', ['Не выбрано', 1, 2, 3, 4, 5], false, true)
 
 
       +date-select
-
+      
+      +btn('Показать')
     .container
 
       +reviews('review-list')

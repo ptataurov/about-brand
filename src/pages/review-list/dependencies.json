@@ -1,1 +1,10 @@
-["top-bar", "sidebar", "nav", "select", "date-select", "reviews"]
+[
+  "top-bar",
+  "sidebar",
+  "nav",
+  "select",
+  "date-select",
+  "reviews",
+  "btn",
+  "select-input"
+]

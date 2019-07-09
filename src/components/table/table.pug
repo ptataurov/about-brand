@@ -3,6 +3,7 @@ mixin table(data, mixes)
               
 
   .table(class=(mixes) && `${mixes}__table`)
+    +btn-export('table')
 
     table.table__self
       thead.table__head
@@ -18,7 +19,6 @@ mixin table(data, mixes)
           tr
             while n++ < data.headers.length
               td= data.self[idx++]
-    +btn-export('table')
     
     .table__more
       button.table__btn-more(type='button') Показать еще 50

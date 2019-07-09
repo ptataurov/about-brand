@@ -8,5 +8,6 @@
   "area-chart",
   "table",
   "checkbox-select",
-  "date-select"
+  "date-select",
+  "btn"
 ]

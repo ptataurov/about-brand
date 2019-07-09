@@ -1,2 +1,10 @@
 @import '~@/assets/scss/common';
-@import './_imports/import'
+@import './_imports/import';
+
+#assortment-pg {
+  .filter {
+    margin-bottom: 30px;
+  }
+}
+
+// Mixes

@@ -1,0 +1,41 @@
+@import './_imports/import';
+
+.select-input {
+  // &--control {
+  //   .select-input__body {
+  //     min-width: 485px;
+  //   }
+  // }
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  padding-right: 15px;
+  padding-left: 15px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: -2px 2px 4px rgba(128, 152, 213, 0.074983);
+}
+
+.select-input__label {
+  margin-right: 15px;
+  color: #554b60;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1.12px;
+  text-transform: uppercase;
+}
+
+.select-input__self {
+  padding: 0;
+  color: #26212b;
+  font-size: 13px;
+  line-height: 14px;
+  border: none;
+
+  &::placeholder {
+    color: #9da5b1;
+    font-size: 13px;
+    line-height: 14px;
+  }
+}

@@ -1,10 +1,12 @@
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const { getDirectoriesBasenames } = require('./build/utils.js')
 const dirs = require('./build/dirs.js')
+
 const modules = require('./webpack.modules')
 
 const isDev = process.env.NODE_ENV === 'development'
@@ -76,8 +78,15 @@ const config = {
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV)
       }
-    })
-  ]
+    }),
+    !isDev &&
+      new CopyWebpackPlugin([
+        {
+          from: './static',
+          to: './static'
+        }
+      ])
+  ].filter(Boolean)
 }
 
 module.exports = config

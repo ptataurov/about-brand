@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
   selectCheckboxHandler(page.querySelector('[data-type=all]'))
 
   const options = {
-    subtitle: {
+    title: {
       text: 'Количество отзывов',
       align: 'left',
       margin: 10,

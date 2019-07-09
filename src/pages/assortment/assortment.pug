@@ -10,7 +10,16 @@ block content
 
     +sidebar(4)
 
-    +nav(4, true)     
+    +nav(4, true, 'assortment-pg')     
+
+    .filter
+      +select-input('name', 'Название', 'Название товара')
+
+      +select('category', 'Категория', data.categorySelect)
+
+      +select('assignment', 'Назначение', data.assignmentSelect)
+
+      +btn('Показать')
 
     .container
 

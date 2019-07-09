@@ -1,7 +1,7 @@
-mixin top-bar
+mixin top-bar(mixes)
   include ~@/components/top-bar/_imports/import
 
-  .top-bar
+  .top-bar(class=(mixes) && `${mixes}__top-bar`)
     ul.top-bar__menu
       li.top-bar__menu-item
         a.top-bar__link(href='#')

@@ -13,5 +13,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   selectHandler(page.querySelector('[data-type=platforms]'), false, true)
 
+  selectHandler(page.querySelector('[data-type=in-search]'), true)
+
+  selectHandler(page.querySelector('[data-type=status]'), true)
+
   selectHandlerMultiple(page.querySelector('[data-type=rating]'))
 })

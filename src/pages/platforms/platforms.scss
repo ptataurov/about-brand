@@ -1,2 +1,8 @@
 @import '~@/assets/scss/common';
-@import './_imports/import'
+@import './_imports/import';
+
+// Mixes
+
+.platforms-pg__nav {
+  margin-bottom: 30px;
+}

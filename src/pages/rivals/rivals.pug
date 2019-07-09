@@ -1,0 +1,29 @@
+extends ../layout
+include ./_imports/import
+
+
+block content
+
+  - const data = require('./data.json')
+
+  #rivals-pg
+    +top-bar('rivals-pg')
+
+    +sidebar(5, 'rivals-pg')
+
+    +nav(5, true, 'rivals-pg')    
+
+    .filter
+      +checkbox-select('increasing', 'Нарастающий')
+
+      +select('sort', 'Сортировка', ['По дням', 'По дням', 'По неделям'])
+
+      +date-select
+
+      +btn('Показать')
+
+    .container
+
+      +area-chart('rivals-pg')
+
+      +table(data.tableData, 'rivals-pg')

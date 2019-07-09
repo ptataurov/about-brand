@@ -1,9 +1,9 @@
-mixin sidebar(activeIdx)
+mixin sidebar(activeIdx, mixes)
   include ~@/components/sidebar/_imports/import
 
   - const links = require('../../assets/data/links.json')
 
-  .sidebar
+  .sidebar(class=(mixes) && `${mixes}__sidebar`)
     .sidebar__top
       a.sidebar__logo-link(href=`/reputation.html`)
         img.sidebar__logo(src=require('../../components/sidebar/img/nav-logo.svg') alt='Логотип')
